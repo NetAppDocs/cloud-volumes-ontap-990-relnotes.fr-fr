@@ -1,0 +1,137 @@
+---
+sidebar: sidebar 
+permalink: reference-new.html 
+keywords: 'what"s new, new, features, release notes, enhancements' 
+summary: Cloud Volumes ONTAP 9.9.0 comprend un certain nombre de nouvelles fonctionnalités et améliorations. 
+---
+= Nouveautés de Cloud Volumes ONTAP 9.9.0
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 9.9.0 comprend un certain nombre de nouvelles fonctionnalités et améliorations.
+
+D'autres fonctionnalités et améliorations sont également introduites dans les dernières versions de Cloud Manager. Voir la https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["Notes de version de Cloud Manager"^] pour plus d'informations.
+
+
+
+== Les instances c4, m4 et r4 ne sont plus prises en charge (28 octobre 2022)
+
+Dans AWS, les types d'instances EC2 c4, m4 et r4 ne sont plus pris en charge par Cloud Volumes ONTAP. Si un système existant fonctionne sur un type d'instance c4, m4 ou r4, vous devez passer à un type d'instance dans la famille d'instances c5, m5 ou r5.
+
+link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-change-ec2-instance.html["Découvrez comment modifier le type d'instance EC2 pour Cloud Volumes ONTAP"^].
+
+Reportez-vous à la section link:https://mysupport.netapp.com/info/communications/ECMLP2880231.html["Support NetApp"^] pour en savoir plus sur la fin de disponibilité et la prise en charge de ces types d'instances.
+
+
+
+== Dernière mise à jour (21 avril 2021)
+
+Dans AWS, il est désormais possible de configurer jusqu'à 24 machines virtuelles de stockage pour la reprise après incident. La limite précédente était de 12 machines virtuelles de stockage utilisées pour la reprise après incident.
+
+link:reference-limits-aws.html#storage-vm-limits["En savoir plus sur les limites des machines virtuelles de stockage"].
+
+
+
+== Dernières mises à jour (12 avril 2021)
+
+Quelques mises à jour ont été effectuées depuis la sortie de Cloud Volumes ONTAP 9.9.0.
+
+*Mises à jour AWS*
+
+* Cloud Volumes ONTAP prend désormais en charge les disques SSD à usage général (gp3), à partir de la version 9.7. Les disques gp3 sont les disques SSD les plus économiques qui permettent d'équilibrer les coûts et les performances pour un large éventail de charges de travail.
++
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html#sizing-your-system-in-aws["En savoir plus sur l'utilisation de disques gp3 avec Cloud Volumes ONTAP"^].
+
+* Cloud Volumes ONTAP ne prend plus en charge les disques durs à froid (sc1).
+
+
+Les modifications apportées aux disques EBS ont été introduites dans Cloud Manager 3.9.5.
+
+* Mises à jour Azure*
+
+* Les nouveaux types de VM de la gamme E-Series sont pris en charge :
++
+** E4S_v3 avec des systèmes à un seul nœud utilisant PAYGO Explore ou BYOL
+** E8s_v3 avec des systèmes à un seul nœud en combinant PAYGO Standard ou BYOL, et des paires haute disponibilité en utilisant le modèle PAYGO Premium ou BYOL
+** E64is_v3 avec des systèmes à un seul nœud utilisant PAYGO Premium ou BYOL
+
+
+* Cloud Volumes ONTAP BYOL prend en charge jusqu'à 24 machines virtuelles de stockage (SVM). Ces 24 machines virtuelles de stockage peuvent servir de données ou être configurées pour la reprise après incident.
++
+La précédente limite dans la version 9.9.0 était de 12 machines virtuelles de stockage utilisées pour la reprise après incident dans Azure.
+
+
+
+
+
+== 9.9.0 GA (9 mars 2021)
+
+La version 9.9.0 GA est disponible pour AWS, Azure et Google Cloud Platform. Elle inclut de nouvelles fonctionnalités et améliorations suivantes.
+
+
+
+=== Meilleures performances d'écriture
+
+Cette version inclut de meilleures performances d'écriture pour Cloud Volumes ONTAP dans tous les fournisseurs cloud et sur toutes les configurations.
+
+
+
+=== Prise en charge des nouveaux types d'instances EC2
+
+Cloud Volumes ONTAP est désormais pris en charge avec les types d'instances Amazon EC2 suivants :
+
+* m5a.2xlarge avec Standard et BYOL
+* m5a.16XLarge avec Premium et BYOL
+* c5a.12xlarge avec Premium et BYOL
+
+
+En savoir plus sur https://aws.amazon.com/ec2/instance-types/m5/["Instances M5A"^] et https://aws.amazon.com/ec2/instance-types/c5/["Instances C5A"^].
+
+link:reference-configs-aws.html["Affichez les configurations prises en charge dans AWS"].
+
+
+
+=== Prise en charge de 24 machines virtuelles de stockage dans Azure
+
+Avec Cloud Volumes ONTAP dans Azure, 24 machines virtuelles de stockage sont désormais prises en charge lorsque vous BYOL (Bring Your Own License). Cela inclut jusqu'à 12 machines virtuelles de stockage utilisées pour la reprise après incident.
+
+Une licence d'extension est requise pour chaque machine virtuelle de stockage _service_ de données supplémentaire au-delà de la première machine virtuelle de stockage fournie par défaut avec Cloud Volumes ONTAP. Contactez l'équipe en charge de votre compte pour obtenir une licence d'extension SVM.
+
+Les machines virtuelles de stockage que vous configurez pour la reprise après incident ne nécessitent pas de licence supplémentaire (elles sont gratuites), mais elles ne tiennent pas compte de la limite des machines virtuelles de stockage.
+
+link:reference-limits-azure.html#storage-vm-limits["En savoir plus sur les limites des machines virtuelles de stockage dans Azure"].
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html["Découvrez comment créer des machines virtuelles de stockage destinées aux données pour Cloud Volumes ONTAP dans Azure"^].
+
+
+
+== Version requise de Cloud Manager Connector
+
+Cloud Manager Connector doit exécuter la version 3.9.4 ou ultérieure pour déployer de nouveaux systèmes Cloud Volumes ONTAP 9.9.0 et mettre à niveau les systèmes existants vers la version 9.9.0.
+
+
+
+== Changements apportés à Cloud Manager 3.9.4
+
+La version 3.9.4 de Cloud Manager inclut quelques améliorations pour la gestion d'Cloud Volumes ONTAP, notamment les améliorations apportées à la prise en charge d'AWS KMS, la prise en charge des VPC partagés dans Google Cloud et la réduction des adresses IP dans Google Cloud.
+
+Accédez au https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["Notes de version de Cloud Manager"^] pour plus d'informations sur la version 3.9.4.
+
+
+
+== Notes de mise à niveau
+
+* La mise à niveau d'Cloud Volumes ONTAP doit être effectuée depuis Cloud Manager. Vous ne devez pas mettre à niveau Cloud Volumes ONTAP à l'aide de System Manager ou de l'interface de ligne de commandes. Cela peut affecter la stabilité du système.
+* Vous pouvez effectuer la mise à niveau vers Cloud Volumes ONTAP 9.9.0 à partir de la version 9.8. Cloud Manager vous invite à mettre à niveau vos systèmes Cloud Volumes ONTAP 9.8 existants vers la version 9.9.0.
++
+http://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html["Découvrez comment effectuer la mise à niveau lorsque Cloud Manager vous informe"^].
+
+* La mise à niveau d'un système à un nœud unique permet de mettre le système hors ligne pendant 25 minutes au cours desquelles les E/S sont interrompues.
+* La mise à niveau d'une paire haute disponibilité s'effectue sans interruption et les E/S sont continues. Au cours de ce processus de mise à niveau sans interruption, chaque nœud est mis à niveau en tandem afin de continuer à traiter les E/S aux clients.
+
