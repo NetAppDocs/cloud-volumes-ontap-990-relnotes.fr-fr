@@ -16,7 +16,7 @@ summary: Cloud Volumes ONTAP 9.9.0 comprend un certain nombre de nouvelles fonct
 [role="lead"]
 Cloud Volumes ONTAP 9.9.0 comprend un certain nombre de nouvelles fonctionnalités et améliorations.
 
-D'autres fonctionnalités et améliorations sont également introduites dans les dernières versions de Cloud Manager. Voir la https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["Notes de version de Cloud Manager"^] pour plus d'informations.
+D'autres fonctionnalités et améliorations sont également introduites dans les dernières versions de BlueXP. Voir la https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["Notes de mise à jour BlueXP"^] pour plus d'informations.
 
 
 
@@ -51,7 +51,7 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-planning-yo
 * Cloud Volumes ONTAP ne prend plus en charge les disques durs à froid (sc1).
 
 
-Les modifications apportées aux disques EBS ont été introduites dans Cloud Manager 3.9.5.
+Ces changements ont été apportés à ces disques EBS dans le cadre de BlueXP 3.9.5.
 
 * Mises à jour Azure*
 
@@ -111,26 +111,26 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-sv
 
 
 
-== Version requise de Cloud Manager Connector
+== Version requise du connecteur BlueXP
 
-Cloud Manager Connector doit exécuter la version 3.9.4 ou ultérieure pour déployer de nouveaux systèmes Cloud Volumes ONTAP 9.9.0 et mettre à niveau les systèmes existants vers la version 9.9.0.
+Le connecteur BlueXP doit exécuter la version 3.9.4 ou ultérieure pour déployer de nouveaux systèmes Cloud Volumes ONTAP 9.9.0 et mettre à niveau les systèmes existants vers la version 9.9.0.
 
 
 
-== Changements apportés à Cloud Manager 3.9.4
+== Modifications introduites avec la version 3.9.4 du connecteur
 
-La version 3.9.4 de Cloud Manager inclut quelques améliorations pour la gestion d'Cloud Volumes ONTAP, notamment les améliorations apportées à la prise en charge d'AWS KMS, la prise en charge des VPC partagés dans Google Cloud et la réduction des adresses IP dans Google Cloud.
+La version 3.9.4 de ce connecteur comprend plusieurs améliorations pour la gestion d'Cloud Volumes ONTAP, notamment les améliorations apportées à la prise en charge des KMS d'AWS, la prise en charge des VPC partagés dans Google Cloud et la réduction des adresses IP dans Google Cloud.
 
-Accédez au https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["Notes de version de Cloud Manager"^] pour plus d'informations sur la version 3.9.4.
+Accédez au https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["Notes de mise à jour BlueXP"^] pour plus d'informations sur la version 3.9.4.
 
 
 
 == Notes de mise à niveau
 
-* La mise à niveau d'Cloud Volumes ONTAP doit être effectuée depuis Cloud Manager. Vous ne devez pas mettre à niveau Cloud Volumes ONTAP à l'aide de System Manager ou de l'interface de ligne de commandes. Cela peut affecter la stabilité du système.
-* Vous pouvez effectuer la mise à niveau vers Cloud Volumes ONTAP 9.9.0 à partir de la version 9.8. Cloud Manager vous invite à mettre à niveau vos systèmes Cloud Volumes ONTAP 9.8 existants vers la version 9.9.0.
+* Les mises à niveau de Cloud Volumes ONTAP doivent être effectuées depuis BlueXP. Vous ne devez pas mettre à niveau Cloud Volumes ONTAP à l'aide de System Manager ou de l'interface de ligne de commandes. Cela peut affecter la stabilité du système.
+* Vous pouvez effectuer la mise à niveau vers Cloud Volumes ONTAP 9.9.0 à partir de la version 9.8. BlueXP vous invite à mettre à niveau vos systèmes Cloud Volumes ONTAP 9.8 existants vers la version 9.9.0.
 +
-http://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html["Découvrez comment effectuer la mise à niveau lorsque Cloud Manager vous informe"^].
+http://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html["Découvrez comment effectuer la mise à niveau lorsque BlueXP vous avertit"^].
 
 * La mise à niveau d'un système à un nœud unique permet de mettre le système hors ligne pendant 25 minutes au cours desquelles les E/S sont interrompues.
 * La mise à niveau d'une paire haute disponibilité s'effectue sans interruption et les E/S sont continues. Au cours de ce processus de mise à niveau sans interruption, chaque nœud est mis à niveau en tandem afin de continuer à traiter les E/S aux clients.
